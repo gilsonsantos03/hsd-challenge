@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'splash_controller.dart';
 
@@ -23,7 +22,8 @@ class SplashPage extends StatelessWidget {
                       height: 25.0,
                     ),
                     Text('NBA Teams',
-                        style: GoogleFonts.roboto(
+                        style: TextStyle(
+                            fontFamily: 'Geomanist',
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 30.0))

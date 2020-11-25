@@ -31,7 +31,7 @@ dependencies:
   get: ^3.17.1
   font_awesome_flutter: ^8.10.0
   dio: ^3.0.10
-  google_fonts: ^1.1.1
+ 
 
 dev_dependencies:
   flutter_test:
@@ -78,3 +78,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Geomanist
+      fonts: 
+        - asset: assets/fonts/Geomanist-Regular.ttf
