@@ -9,6 +9,7 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     _loadData();
+    incrementPage();
   }
 
   final PlayersRepository _playersRepository = Get.find<PlayersRepository>();
@@ -20,7 +21,7 @@ class HomeController extends GetxController {
   // página inicial
   int page = 1;
 
-  void incrementPage() async {
+  Future<void> incrementPage() async {
     try {
       Meta meta = await _metaRepository.getMetaInfo();
       int totalPages = meta.totalPages;
@@ -43,6 +44,7 @@ class HomeController extends GetxController {
         List<Player> playersTemp = await _playersRepository.getPlayers(page);
         Map<String, List<Player>> teamsTemp = Map<String, List<Player>>();
 
+        // para pegar os valores da nova página
         for (Player player in playersTemp) {
           if (teamsTemp.containsKey(player.team.fullName)) {
             teamsTemp[player.team.fullName].add(player);
@@ -51,10 +53,21 @@ class HomeController extends GetxController {
           }
         }
 
-        // o problema ta aqui, pois caso aquela chave já esteja em teams, ele substitui os valores
-        // e não add no final
-        teams.addAll(teamsTemp);
-        print(teams);
+        // para adicionar os dados de teamsTemp em teams
+        // tem que ser assim, pois os métodos padrões dos maps add ou addAll
+        // sobrescrevem os valores que já estavam lá
+        for (String key in teamsTemp.keys.toList()) {
+          // print(key);
+          if (teams.containsKey(key)) {
+            List<Player> list = teams[key];
+            list.addAll(teamsTemp[key]);
+            teams.putIfAbsent(key, () => list);
+          } else {
+            List<Player> list2 = teamsTemp[key];
+            teams.putIfAbsent(key, () => list2);
+          }
+        }
+
         update();
       }
     } catch (e) {
@@ -74,7 +87,7 @@ class HomeController extends GetxController {
           teams[player.team.fullName] = [player];
         }
       }
-      print(teams);
+      //print(teams);
       update();
     } catch (e) {
       print(e);
