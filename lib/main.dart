@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:hsd_challenge/app/modules/splash/splash_binding.dart';
 import 'package:hsd_challenge/app/modules/splash/splash_page.dart';
 import 'package:hsd_challenge/app/routes/app_pages.dart';
+import 'package:hsd_challenge/app/utils/dependency_injection.dart';
 
 void main() {
+  DependencyInjection.init();
   runApp(MyApp());
 }
 

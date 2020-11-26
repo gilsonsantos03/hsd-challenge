@@ -6,7 +6,8 @@ class PlayerApi {
   final Dio _dio = Get.find<Dio>();
 
   Future<List<Player>> getPlayers(int page) async {
-    final Response response = await _dio.get('players');
+    final Response response =
+        await _dio.get('players', queryParameters: {"page": page.toString()});
 
     return (response.data['data'] as List)
         .map((e) => Player.fromJson(e))
