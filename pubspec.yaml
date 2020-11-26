@@ -31,6 +31,7 @@ dependencies:
   get: ^3.17.1
   font_awesome_flutter: ^8.10.0
   dio: ^3.0.10
+  flare_flutter: 
  
 
 dev_dependencies:
@@ -82,3 +83,6 @@ flutter:
     - family: Geomanist
       fonts: 
         - asset: assets/fonts/Geomanist-Regular.ttf
+  
+  assets:
+    - assets/

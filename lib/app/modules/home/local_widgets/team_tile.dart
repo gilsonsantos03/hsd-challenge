@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hsd_challenge/app/data/models/player.dart';
+import 'package:hsd_challenge/app/modules/home/local_widgets/refresh_button.dart';
 import 'package:hsd_challenge/app/modules/home/local_widgets/text_styles.dart';
 
 class TeamTile extends StatelessWidget {
@@ -73,7 +74,8 @@ class TeamTile extends StatelessWidget {
                               '${players[index].firstName} ${players[index].lastName}',
                               style: kPlayerFirstLetterAndFullNameStyle,
                             ),
-                          )
+                          ),
+                          //refreshButton()
                         ],
                       )
                     ],
