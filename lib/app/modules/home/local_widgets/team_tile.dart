@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hsd_challenge/app/data/models/player.dart';
+import 'package:hsd_challenge/app/modules/home/local_widgets/text_styles.dart';
 
 class TeamTile extends StatelessWidget {
   final List<Player> players;
@@ -22,12 +23,7 @@ class TeamTile extends StatelessWidget {
                 Container(
                   child: Text(
                     team,
-                    style: TextStyle(
-                      fontFamily: 'Geomanist',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 12.0,
-                      color: Color(0xff2D2E2F),
-                    ),
+                    style: kTeamStyle,
                   ),
                 ),
                 SizedBox(
@@ -36,11 +32,7 @@ class TeamTile extends StatelessWidget {
                 Container(
                   child: Text(
                     players.length.toString(),
-                    style: TextStyle(
-                        fontFamily: 'Geomanist',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.0,
-                        color: Color.fromRGBO(45, 46, 47, 0.8)),
+                    style: kCountPlayerStyle,
                   ),
                 )
               ],
@@ -60,12 +52,8 @@ class TeamTile extends StatelessWidget {
                       CircleAvatar(
                         backgroundColor: Color(0xffFCFCFC),
                         child: Text(
-                          'G',
-                          style: TextStyle(
-                              fontFamily: 'Geomanist',
-                              fontWeight: FontWeight.w800,
-                              fontSize: 16.0,
-                              color: Colors.black),
+                          players[index].firstName.split('').first,
+                          style: kPlayerFirstLetterAndFullNameStyle,
                         ),
                       ),
                       SizedBox(
@@ -77,23 +65,13 @@ class TeamTile extends StatelessWidget {
                           Container(
                             child: Text(
                               players[index].id.toString(),
-                              style: TextStyle(
-                                fontFamily: 'Geomanist',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12.0,
-                                color: Color.fromRGBO(45, 46, 47, 0.53),
-                              ),
+                              style: kPlayerIdStyle,
                             ),
                           ),
                           Container(
                             child: Text(
                               '${players[index].firstName} ${players[index].lastName}',
-                              style: TextStyle(
-                                fontFamily: 'Geomanist',
-                                fontWeight: FontWeight.w800,
-                                fontSize: 16.0,
-                                color: Color.fromRGBO(45, 46, 47, 1),
-                              ),
+                              style: kPlayerFirstLetterAndFullNameStyle,
                             ),
                           )
                         ],
