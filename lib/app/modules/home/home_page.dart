@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Color(0xffFCFCFC),
         ),
         body: Container(
+          color: Colors.white,
           padding: EdgeInsets.all(5.0),
           child: ListView.builder(
             itemCount: _.teams.keys.toList().length,
