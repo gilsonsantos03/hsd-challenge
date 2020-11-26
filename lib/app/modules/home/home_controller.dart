@@ -13,8 +13,8 @@ class HomeController extends GetxController {
   final PlayersRepository _playersRepository = Get.find<PlayersRepository>();
   //final MetaRepository _metaRepository = Get.find<MetaRepository>();
 
-  List<Player> _players = [];
-  Map<String, List<Player>> teams = Map<String, List<Player>>().obs;
+  List<Player> players = [];
+  Map<String, List<Player>> teams = Map<String, List<Player>>();
 
   int page = 1;
 
@@ -22,18 +22,18 @@ class HomeController extends GetxController {
 
   Future<void> _loadData() async {
     try {
-      _players = await _playersRepository.getPlayers(page);
+      players = await _playersRepository.getPlayers(page);
 
       // para criar o time com seus jogadores
-      for (Player player in _players) {
+      for (Player player in players) {
         if (teams.containsKey(player.team.fullName)) {
           teams[player.team.fullName].add(player);
         } else {
           teams[player.team.fullName] = [player];
         }
       }
+
       update();
-      print(teams);
     } catch (e) {
       print(e);
     }

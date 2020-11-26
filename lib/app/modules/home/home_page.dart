@@ -29,10 +29,11 @@ class HomePage extends StatelessWidget {
         body: Container(
           padding: EdgeInsets.all(5.0),
           child: ListView.builder(
-            itemCount: _.teams.length,
+            itemCount: _.teams.keys.toList().length,
             itemBuilder: (context, index) {
-              final List<Player> players = _.teams[index];
               final String team = _.teams.keys.elementAt(index);
+              final List<Player> players = _.teams[team];
+
               return TeamTile(players: players, team: team);
             },
           ),
