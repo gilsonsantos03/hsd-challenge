@@ -32,11 +32,17 @@ dependencies:
   font_awesome_flutter: ^8.10.0
   dio: ^3.0.10
   animate_icons: ^1.0.0
+  flutter_launcher_icons: ^0.8.1
  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/basketball-ball.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -85,4 +91,4 @@ flutter:
         - asset: assets/fonts/Geomanist-Regular.ttf
   
   assets:
-    - assets/animated/refresh_animate.svg
+    - assets/icons/basketball-ball.png
