@@ -34,7 +34,7 @@ class HomeController extends GetxController {
         Get.dialog(
           AlertDialog(
             title: Text("Limite de páginas alcançado"),
-            content: Text('Não há mais times'),
+            content: Text('Não há mais jogadores'),
             actions: [
               FlatButton(
                 onPressed: Get.back,

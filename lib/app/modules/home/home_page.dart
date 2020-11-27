@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Color.fromRGBO(252, 252, 252, 0.9),
         ),
         body: ListView.builder(
+          physics: BouncingScrollPhysics(),
           itemCount: _.teams.length,
           itemBuilder: (context, index) {
             final String team = _.teams.keys.elementAt(index);
