@@ -1,3 +1,4 @@
+import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hsd_challenge/app/data/models/meta.dart';
@@ -10,6 +11,7 @@ class HomeController extends GetxController {
   void onReady() {
     _loadData();
     incrementPage();
+    controller = AnimateIconController();
   }
 
   final PlayersRepository _playersRepository = Get.find<PlayersRepository>();
@@ -20,6 +22,8 @@ class HomeController extends GetxController {
 
   // página inicial
   int page = 1;
+
+  AnimateIconController controller;
 
   Future<void> incrementPage() async {
     try {

@@ -1,13 +1,18 @@
+import 'package:animate_icons/animate_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:hsd_challenge/app/data/models/player.dart';
-import 'package:hsd_challenge/app/modules/home/local_widgets/refresh_button.dart';
 import 'package:hsd_challenge/app/modules/home/local_widgets/text_styles.dart';
 
 class TeamTile extends StatelessWidget {
   final List<Player> players;
   final String team;
+  final AnimateIconController controller;
 
-  const TeamTile({@required this.players, @required this.team});
+  const TeamTile({
+    @required this.players,
+    @required this.team,
+    @required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class TeamTile extends StatelessWidget {
                     players.length.toString(),
                     style: kCountPlayerStyle,
                   ),
-                )
+                ),
               ],
             ),
           ),

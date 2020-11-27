@@ -27,20 +27,20 @@ class HomePage extends StatelessWidget {
           ),
           backgroundColor: Color(0xffFCFCFC),
         ),
-        body: Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(5.0),
-          child: ListView.builder(
-            itemCount: _.teams.length,
-            itemBuilder: (context, index) {
-              final String team = _.teams.keys.elementAt(index);
-              final List<Player> players = _.teams[team];
+        body: ListView.builder(
+          itemCount: _.teams.length,
+          itemBuilder: (context, index) {
+            final String team = _.teams.keys.elementAt(index);
+            final List<Player> players = _.teams[team];
 
-              return (index == _.teams.length - 1)
-                  ? refreshButton(_.incrementPage)
-                  : TeamTile(players: players, team: team);
-            },
-          ),
+            return (index == _.teams.length - 1)
+                ? refreshButtonAnimated(_.controller, _.incrementPage)
+                : TeamTile(
+                    players: players,
+                    team: team,
+                    controller: _.controller,
+                  );
+          },
         ),
       ),
     );
