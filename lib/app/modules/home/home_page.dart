@@ -24,8 +24,9 @@ class HomePage extends StatelessWidget {
           leading: Icon(
             Icons.arrow_back_ios_outlined,
             color: Color(0xff522D2E2F),
+            size: 20.0,
           ),
-          backgroundColor: Color(0xffFCFCFC),
+          backgroundColor: Color.fromRGBO(252, 252, 252, 0.9),
         ),
         body: ListView.builder(
           itemCount: _.teams.length,

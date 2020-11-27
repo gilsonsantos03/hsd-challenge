@@ -22,7 +22,7 @@ class TeamTile extends StatelessWidget {
           Container(
             height: 44.0,
             padding: EdgeInsets.only(left: 24.0, top: 16.0),
-            color: Color(0xffFCFCFC),
+            color: Color.fromRGBO(252, 252, 252, 1),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               children: [
@@ -45,6 +45,7 @@ class TeamTile extends StatelessWidget {
             ),
           ),
           Container(
+            color: Colors.white,
             padding: EdgeInsets.only(top: 24.0),
             child: ListView.builder(
               shrinkWrap: true,

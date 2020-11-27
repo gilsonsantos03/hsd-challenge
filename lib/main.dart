@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'HSD Front Challenge',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Color(0xffFCFCFC),
+        //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashPage(),
       initialBinding: SplashBinding(),
